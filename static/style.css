@@ -1,0 +1,41 @@
+/* background gradient — inviting and modern */
+body {
+  background: linear-gradient(135deg, #f6d365 0%, #fda085 50%, #fbc2eb 100%);
+  min-height: 100vh;
+  color: #222;
+}
+
+/* navbar styling */
+.navbar {
+  background: rgba(0,0,0,0.25);
+  backdrop-filter: blur(6px);
+}
+
+/* cards slightly transparent to blend with background */
+.card {
+  background: rgba(255,255,255,0.95);
+}
+
+/* watermark footer bottom-right */
+.watermark {
+  position: fixed;
+  right: 20px;
+  bottom: 12px;
+  opacity: 0.85;
+  font-weight: 600;
+  color: #333;
+  background: rgba(255,255,255,0.6);
+  padding: 6px 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+/* buttons tweaks */
+.btn-outline-success { color: #0f5132; border-color: #0f5132; }
+.btn-outline-danger { color: #842029; border-color: #842029; }
+
+/* responsive tweaks */
+@media (max-width: 767px) {
+  .container { padding: 10px; }
+  .card { margin-bottom: 12px; }
+}
