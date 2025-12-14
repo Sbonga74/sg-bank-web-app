@@ -50,3 +50,33 @@ BankingApp/
 │
 ├── .gitignore
 └── README.md
+## Installation & Setup
+
+1. Clone the repository
+-git clone https://github.com/Sbonga74/sg-bank-web-app.git
+
+2. Navigate into the project directory
+-cd sg-bank-flask-app
+
+3. Create and activate a virtual environment
+-python3 -m venv venv
+-source venv/bin/activate
+
+4. Install dependencies
+-pip install flask
+
+5. Run the application
+-python app.py
+
+
+6. Open your browser
+-http://127.0.0.1:5000
+
+## Disclaimer!!
+This application is for educational purposes only.
+It is not intended for real financial use and does not implement real-world banking security standards.
+
+## Author
+Sibongakonke Mthethwa (BSc Computer Science – University of the Witwatersrand)
+-Email: sbongamthethwa74@gmail.com
+-South Africa
