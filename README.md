@@ -1,6 +1,7 @@
 # 🏦 Banking App
 A simple Flask-based banking application to track transactions.
 
+
 ## Features
 * View transaction history
 * Clean, responsive UI (Jinja2 templates)
