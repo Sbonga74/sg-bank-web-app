@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% block title %}Transaction History{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2 class="fw-bold">Full Transaction History</h2>
+        <a href="{{ url_for('dashboard') }}" class="btn btn-outline-secondary btn-sm">← Back to Dashboard</a>
+    </div>
+
+    <div class="card shadow-sm border-0">
+        <div class="card-body p-0">
+            {% if transactions %}
+            <div class="table-responsive">
+                <table class="table table-hover mb-0">
+                    <thead class="table-light">
+                        <tr>
+                            <th class="ps-4">Date & Time</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                            <th class="text-end pe-4">Amount</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for t in transactions %}
+                        <tr>
+                            <td class="ps-4 text-muted">
+                                {{ t.timestamp.strftime('%Y-%m-%d | %H:%M') }}
+                            </td>
+                            <td>
+                                <span class="badge {{ 'bg-success-subtle text-success' if t.type == 'deposit' else 'bg-danger-subtle text-danger' }} border">
+                                    {{ t.type|capitalize }}
+                                </span>
+                            </td>
+                            <td>{{ t.description or '<span class="text-muted italic">No description</span>'|safe }}</td>
+                            <td class="text-end pe-4 fw-bold {{ 'text-success' if t.type == 'deposit' else 'text-danger' }}">
+                                {{ '+' if t.type == 'deposit' else '-' }} R{{ "%.2f"|format(t.amount) }}
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            {% else %}
+            <div class="text-center py-5">
+                <p class="text-muted">No transactions found in your history.</p>
+                <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#depositModal">Make your first deposit</button>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}

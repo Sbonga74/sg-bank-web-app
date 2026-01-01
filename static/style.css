@@ -1,41 +1,46 @@
-/* background gradient — inviting and modern */
+:root {
+    --primary-color: #2563eb;
+    --bg-color: #f8fafc;
+    --card-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
 body {
-  background: linear-gradient(135deg, #f6d365 0%, #fda085 50%, #fbc2eb 100%);
-  min-height: 100vh;
-  color: #222;
+    background-color: var(--bg-color);
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
 }
 
-/* navbar styling */
 .navbar {
-  background: rgba(0,0,0,0.25);
-  backdrop-filter: blur(6px);
+    background-color: #1e293b !important;
+    border-bottom: 3px solid var(--primary-color);
 }
 
-/* cards slightly transparent to blend with background */
 .card {
-  background: rgba(255,255,255,0.95);
+    border: none;
+    border-radius: 12px;
+    transition: transform 0.2s;
 }
 
-/* watermark footer bottom-right */
+.card:hover {
+    transform: translateY(-2px);
+}
+
+.balance-card {
+    background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+    color: white;
+}
+
+.btn-primary { background-color: var(--primary-color); border: none; }
+.btn-success { background-color: #059669; border: none; }
+.btn-danger { background-color: #dc2626; border: none; }
+
+.table {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
 .watermark {
-  position: fixed;
-  right: 20px;
-  bottom: 12px;
-  opacity: 0.85;
-  font-weight: 600;
-  color: #333;
-  background: rgba(255,255,255,0.6);
-  padding: 6px 10px;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-}
-
-/* buttons tweaks */
-.btn-outline-success { color: #0f5132; border-color: #0f5132; }
-.btn-outline-danger { color: #842029; border-color: #842029; }
-
-/* responsive tweaks */
-@media (max-width: 767px) {
-  .container { padding: 10px; }
-  .card { margin-bottom: 12px; }
+    font-size: 0.8rem;
+    opacity: 0.5;
+    margin-top: 50px;
 }
